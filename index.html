@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venda de Veículo – Fiat Uno Way 1.0 Fire 2014</title>
+    <meta name="description" content="Fiat Uno Way 1.0 Fire 2014 à venda. Veículo econômico, revisado e abaixo da FIPE. Confira as fotos e detalhes.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #25D366; /* WhatsApp Green */
+            --primary-dark: #128C7E;
+            --text-dark: #1F2937;
+            --text-gray: #6B7280;
+            --bg-light: #F3F4F6;
+            --white: #FFFFFF;
+            --accent: #E11D48; /* Red for alert/price */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 24px;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-whatsapp {
+            background-color: var(--primary);
+            color: var(--white);
+            box-shadow: 0 4px 6px rgba(37, 211, 102, 0.2);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(37, 211, 102, 0.3);
+        }
+
+        .highlight {
+            color: var(--primary);
+        }
+
+        /* Header / Hero */
+        header {
+            background-color: var(--white);
+            padding-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .navbar {
+            padding: 1rem 0;
+            border-bottom: 1px solid #e5e7eb;
+            margin-bottom: 2rem;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--text-dark);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text .price-tag {
+            display: inline-block;
+            background-color: var(--text-dark);
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text .price-value {
+            color: var(--primary);
+        }
+
+        .hero-image {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image:hover img {
+            transform: scale(1.02);
+        }
+
+        /* Info Section */
+        .info-section {
+            padding: 4rem 0;
+            background-color: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .spec-card {
+            background-color: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .spec-icon {
+            width: 24px;
+            height: 24px;
+            color: var(--primary-dark);
+            flex-shrink: 0;
+        }
+
+        .spec-text h3 {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-bottom: 0.25rem;
+        }
+
+        .spec-text p {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+        }
+
+        .features-list {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+
+        .check-icon {
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        /* Gallery */
+        .gallery-section {
+            padding: 4rem 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            aspect-ratio: 4/3;
+            background-color: #ddd;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .zoom-icon {
+            color: white;
+            width: 40px;
+            height: 40px;
+        }
+
+        /* Price Comparison */
+        .price-comparison {
+            background-color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .comparison-card {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+        }
+
+        .comparison-header {
+            background-color: var(--text-dark);
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .comparison-body {
+            padding: 2rem;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .price-row:last-child {
+            border-bottom: none;
+        }
+
+        .price-label {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+        }
+
+        .price-amount {
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .fipe-amount {
+            color: var(--text-gray);
+            text-decoration: line-through;
+        }
+
+        .our-price {
+            color: var(--primary-dark);
+            font-size: 1.5rem;
+        }
+
+        .discount-badge {
+            background-color: rgba(37, 211, 102, 0.1);
+            color: var(--primary-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-text {
+            color: #9CA3AF;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Floating Button */
+        .floating-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.05);
+            background-color: var(--primary-dark);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Modal / Lightbox */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            inset: 0;
+            background-color: rgba(0,0,0,0.9);
+            padding: 2rem;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 4px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 3rem;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .info-section {
+                padding: 2rem 0;
+            }
+            
+            .floating-btn span {
+                display: none;
+            }
+            
+            .floating-btn {
+                padding: 15px;
+                border-radius: 50%;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Hero -->
+    <header>
+        <div class="container navbar">
+            <div class="nav-content">
+                <div class="logo">VENDA PARTICULAR</div>
+                <a href="https://wa.me/5511949214999?text=Ol%C3%A1%2C%20vi%20o%20an%C3%BAncio%20do%20Fiat%20Uno%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." class="btn btn-whatsapp">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c1.001.54 1.973.902 3.129.902 3.185 0 5.772-2.587 5.772-5.766.001-3.18-2.585-5.765-5.766-5.765zm6.544 1.831c1.376 1.745 1.77 4.09 1.127 6.166-.882 2.96-3.722 4.793-6.84 4.34-2.222-.27-4.14-1.747-5.092-3.79-.475-1.013-.672-2.118-.553-3.23.076-.84.288-1.638.629-2.37.28-.616.666-1.168 1.135-1.635.89-.89 1.96-1.503 3.16-1.728 2.455-.494 4.965.733 6.434 2.247zm-5.18 1.62c-.11-.184-.403-.294-.845-.516-.44-.22-2.603-1.285-3.006-1.431-.403-.148-.696-.221-.99.22s-1.136 1.432-1.393 1.725-.513.294-.954.073c-.44-.22-1.859-.684-3.542-2.185-1.309-1.166-2.193-2.607-2.45-3.048-.257-.441-.028-.679.193-.898.201-.2.44-.515.66-.773.22-.257.293-.44.44-.734.147-.294.073-.551-.037-.772-.11-.22-1.185-2.853-1.605-3.876-.416-1.017-.833-.876-1.137-.894-.284-.017-.61-.02-.937-.02-.33 0-.866.124-1.319.616-.454.493-1.74 1.7-1.74 4.146 0 2.446 1.779 4.808 2.027 5.139.248.33 3.504 5.345 8.487 7.495 1.186.512 2.11.817 2.83 1.045 1.185.377 2.264.323 3.116.196.953-.142 2.603-1.064 2.97-2.091.366-1.028.366-1.908.257-2.091-.11-.184-.403-.294-.844-.516z"/></svg>
+                    WhatsApp
+                </a>
+            </div>
+            
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <span class="price-tag">R$ <span class="price-value">24.500</span></span>
+                    <h1>Fiat Uno Way 1.0 Fire <br><span style="color: var(--text-gray); font-size: 1.5rem;">Ano 2014</span></h1>
+                    <p style="margin-bottom: 2rem; color: var(--text-gray); font-size: 1.1rem;">
+                        Veículo econômico, revisado e pronto para uso. Ideal para o dia a dia com baixo custo de manutenção.
+                    </p>
+                    <a href="https://wa.me/5511949214999?text=Tenho%20interesse%20no%20Fiat%20Uno%202014" class="btn btn-whatsapp" style="padding: 16px 32px; font-size: 1.1rem;">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c1.001.54 1.973.902 3.129.902 3.185 0 5.772-2.587 5.772-5.766.001-3.18-2.585-5.765-5.766-5.765zm6.544 1.831c1.376 1.745 1.77 4.09 1.127 6.166-.882 2.96-3.722 4.793-6.84 4.34-2.222-.27-4.14-1.747-5.092-3.79-.475-1.013-.672-2.118-.553-3.23.076-.84.288-1.638.629-2.37.28-.616.666-1.168 1.135-1.635.89-.89 1.96-1.503 3.16-1.728 2.455-.494 4.965.733 6.434 2.247zm-5.18 1.62c-.11-.184-.403-.294-.845-.516-.44-.22-2.603-1.285-3.006-1.431-.403-.148-.696-.221-.99.22s-1.136 1.432-1.393 1.725-.513.294-.954.073c-.44-.22-1.859-.684-3.542-2.185-1.309-1.166-2.193-2.607-2.45-3.048-.257-.441-.028-.679.193-.898.201-.2.44-.515.66-.773.22-.257.293-.44.44-.734.147-.294.073-.551-.037-.772-.11-.22-1.185-2.853-1.605-3.876-.416-1.017-.833-.876-1.137-.894-.284-.017-.61-.02-.937-.02-.33 0-.866.124-1.319.616-.454.493-1.74 1.7-1.74 4.146 0 2.446 1.779 4.808 2.027 5.139.248.33 3.504 5.345 8.487 7.495 1.186.512 2.11.817 2.83 1.045 1.185.377 2.264.323 3.116.196.953-.142 2.603-1.064 2.97-2.091.366-1.028.366-1.908.257-2.091-.11-.184-.403-.294-.844-.516z"/></svg>
+                        Falar no WhatsApp
+                    </a>
+                </div>
+                <div class="hero-image">
+                    <!-- Placeholder para imagem principal -->
+                    <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=1000&auto=format&fit=crop" alt="Fiat Uno Way 2014">
+                    <div style="position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.6); color: white; padding: 5px 10px; border-radius: 4px; font-size: 0.8rem;">
+                        Imagem ilustrativa
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Info Section -->
+    <section class="info-section">
+        <div class="container">
+            <h2 class="section-title">Detalhes do Veículo</h2>
+            
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <div class="spec-text">
+                        <h3>Modelo</h3>
+                        <p>Uno Way 1.0 Fire</p>
+                    </div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-text">
+                        <h3>Ano</h3>
+                        <p>2014</p>
+                    </div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-text">
+                        <h3>Motor</h3>
+                        <p>1.0 Flex</p>
+                    </div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-text">
+                        <h3>Câmbio</h3>
+                        <p>Manual</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features-list">
+                <div class="feature-item">
+                    <svg class="check-icon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                    Vidros elétricos
+                </div>
+                <div class="feature-item">
+                    <svg class="check-icon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                    Travas elétricas
+                </div>
+                <div class="feature-item">
+                    <svg class="check-icon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                    Desembaçador dianteiro/traseiro
+                </div>
+                <div class="feature-item">
+                    <svg class="check-icon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                    Revisado (óleo, filtros, freios)
+                </div>
+                <div class="feature-item">
+                    <svg class="check-icon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                    Bateria nova (na garantia)
+                </div>
+                <div class="feature-item">
+                    <svg class="check-icon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                    Documentação OK
+                </div>
+                <div class="feature-item">
+                    <svg class="check-icon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                    Pronto para transferir
+                </div>
+                <div class="feature-item">
+                    <svg class="check-icon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                    Super econômico
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Galeria de Fotos</h2>
+            <div class="gallery-grid">
+                <!-- Placeholders de galeria - substituir por fotos reais -->
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=800&auto=format&fit=crop" alt="Foto 1">
+                    <div class="gallery-overlay">
+                        <svg class="zoom-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=800&auto=format&fit=crop" alt="Foto 2">
+                    <div class="gallery-overlay">
+                        <svg class="zoom-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=800&auto=format&fit=crop" alt="Foto 3">
+                    <div class="gallery-overlay">
+                        <svg class="zoom-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
+                    </div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 1rem; color: #666; font-size: 0.9rem;">*Imagens ilustrativas. Agende uma visita para ver o carro pessoalmente.</p>
+        </div>
+    </section>
+
+    <!-- Price Comparison -->
+    <section class="price-comparison">
+        <div class="container">
+            <div class="comparison-card">
+                <div class="comparison-header">
+                    <h2>Oportunidade de Negócio</h2>
+                </div>
+                <div class="comparison-body">
+                    <div class="price-row">
+                        <span class="price-label">Tabela FIPE</span>
+                        <span class="price-amount fipe-amount">R$ 26.300</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="price-label">Preço de Venda</span>
+                        <span class="price-amount our-price">R$ 24.500</span>
+                    </div>
+                    <div class="discount-badge">
+                        ABAIXO DA FIPE
+                    </div>
+                    <p style="margin-top: 1.5rem; color: var(--text-gray);">
+                        Economia de R$ 1.800 na compra do seu carro novo!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-text">Veículo particular • Documentação em dia</p>
+            <a href="https://wa.me/5511949214999?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Fiat%20Uno." class="btn btn-whatsapp">
+                Entrar em contato
+            </a>
+            <p style="margin-top: 2rem; font-size: 0.8rem; color: #666;">&copy; 2026 Venda de Veículos Particular</p>
+        </div>
+    </footer>
+
+    <!-- Floating Button -->
+    <a href="https://wa.me/5511949214999?text=Tenho%20interesse%20no%20Fiat%20Uno" class="floating-btn" target="_blank">
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c1.001.54 1.973.902 3.129.902 3.185 0 5.772-2.587 5.772-5.766.001-3.18-2.585-5.765-5.766-5.765zm6.544 1.831c1.376 1.745 1.77 4.09 1.127 6.166-.882 2.96-3.722 4.793-6.84 4.34-2.222-.27-4.14-1.747-5.092-3.79-.475-1.013-.672-2.118-.553-3.23.076-.84.288-1.638.629-2.37.28-.616.666-1.168 1.135-1.635.89-.89 1.96-1.503 3.16-1.728 2.455-.494 4.965.733 6.434 2.247zm-5.18 1.62c-.11-.184-.403-.294-.845-.516-.44-.22-2.603-1.285-3.006-1.431-.403-.148-.696-.221-.99.22s-1.136 1.432-1.393 1.725-.513.294-.954.073c-.44-.22-1.859-.684-3.542-2.185-1.309-1.166-2.193-2.607-2.45-3.048-.257-.441-.028-.679.193-.898.201-.2.44-.515.66-.773.22-.257.293-.44.44-.734.147-.294.073-.551-.037-.772-.11-.22-1.185-2.853-1.605-3.876-.416-1.017-.833-.876-1.137-.894-.284-.017-.61-.02-.937-.02-.33 0-.866.124-1.319.616-.454.493-1.74 1.7-1.74 4.146 0 2.446 1.779 4.808 2.027 5.139.248.33 3.504 5.345 8.487 7.495 1.186.512 2.11.817 2.83 1.045 1.185.377 2.264.323 3.116.196.953-.142 2.603-1.064 2.97-2.091.366-1.028.366-1.908.257-2.091-.11-.184-.403-.294-.844-.516z"/></svg>
+        <span>Tenho interesse no Fiat Uno</span>
+    </a>
+
+    <!-- Lightbox Modal -->
+    <div class="modal" id="imageModal" onclick="closeModal()">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+
+    <script>
+        function openModal(element) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImg');
+            const img = element.querySelector('img');
+            
+            modal.style.display = "flex";
+            modalImg.src = img.src;
+            document.body.style.overflow = "hidden"; // Prevent scrolling
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
