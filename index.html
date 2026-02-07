@@ -218,61 +218,9 @@
             flex-shrink: 0;
         }
 
-        /* Gallery */
-        .gallery-section {
-            padding: 4rem 0;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .gallery-item {
-            position: relative;
-            border-radius: 8px;
-            overflow: hidden;
-            cursor: pointer;
-            aspect-ratio: 4/3;
-            background-color: #ddd;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0,0,0,0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
-        }
-
-        .zoom-icon {
-            color: white;
-            width: 40px;
-            height: 40px;
-        }
-
         /* Price Comparison */
         .price-comparison {
-            background-color: var(--white);
+            background-color: var(--bg-light);
             padding: 4rem 0;
             text-align: center;
         }
@@ -380,37 +328,6 @@
             0% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
             100% { transform: translateY(0px); }
-        }
-
-        /* Modal / Lightbox */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            inset: 0;
-            background-color: rgba(0,0,0,0.9);
-            padding: 2rem;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal.active {
-            display: flex;
-        }
-
-        .modal-content {
-            max-width: 90%;
-            max-height: 90vh;
-            border-radius: 4px;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: white;
-            font-size: 3rem;
-            cursor: pointer;
         }
 
         /* Responsive */
@@ -546,35 +463,6 @@
         </div>
     </section>
 
-    <!-- Gallery -->
-    <section class="gallery-section">
-        <div class="container">
-            <h2 class="section-title">Galeria de Fotos</h2>
-            <div class="gallery-grid">
-                <!-- Placeholders de galeria - substituir por fotos reais -->
-                <div class="gallery-item" onclick="openModal(this)">
-                    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=800&auto=format&fit=crop" alt="Foto 1">
-                    <div class="gallery-overlay">
-                        <svg class="zoom-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal(this)">
-                    <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=800&auto=format&fit=crop" alt="Foto 2">
-                    <div class="gallery-overlay">
-                        <svg class="zoom-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal(this)">
-                    <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=800&auto=format&fit=crop" alt="Foto 3">
-                    <div class="gallery-overlay">
-                        <svg class="zoom-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
-                    </div>
-                </div>
-            </div>
-            <p style="text-align: center; margin-top: 1rem; color: #666; font-size: 0.9rem;">*Imagens ilustrativas. Agende uma visita para ver o carro pessoalmente.</p>
-        </div>
-    </section>
-
     <!-- Price Comparison -->
     <section class="price-comparison">
         <div class="container">
@@ -619,35 +507,5 @@
         <span>Tenho interesse no Fiat Uno</span>
     </a>
 
-    <!-- Lightbox Modal -->
-    <div class="modal" id="imageModal" onclick="closeModal()">
-        <span class="close-modal">&times;</span>
-        <img class="modal-content" id="modalImg">
-    </div>
-
-    <script>
-        function openModal(element) {
-            const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImg');
-            const img = element.querySelector('img');
-            
-            modal.style.display = "flex";
-            modalImg.src = img.src;
-            document.body.style.overflow = "hidden"; // Prevent scrolling
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('imageModal');
-            modal.style.display = "none";
-            document.body.style.overflow = "auto";
-        }
-
-        // Close modal on escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === "Escape") {
-                closeModal();
-            }
-        });
-    </script>
 </body>
 </html>
